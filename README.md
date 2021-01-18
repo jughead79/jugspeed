@@ -1,2 +1,0 @@
-jugspeed
-im owner
