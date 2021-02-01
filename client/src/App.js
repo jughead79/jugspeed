@@ -2,8 +2,8 @@ import React from 'react';
 import { Route, Router, Switch } from 'react-router-dom';
 import history from './history';
 
-import Home from './screen/Home'
-import About from './screen/About'
+import Home from './screen/home/index'
+import About from './screen/about/index'
 
 import Header from './components/home/header'
 
@@ -14,9 +14,9 @@ const App = () => {
         <div> 
           <Header />          
           <Switch>
-          <Route path='/' exact component={Home} />
-          <Route path='/about' exact component={About} />
-        </Switch>
+            <Route path='/' exact component={Home} />
+            <Route path='/about' exact component={About} />
+          </Switch>
         </div>
       </Router>
     </div>
