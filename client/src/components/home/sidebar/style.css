@@ -1,9 +1,7 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  border-left-color: lightgray;
-  border-left-width: 1px;
-  border-left: 1px solid;
+  border-left: solid 2px lightgray
 }
 .sidebar-item {
   display: flex;
@@ -16,8 +14,12 @@
 }
 .sidebar-item {
   margin-right: 2px;
+  border-radius: 9px;
 }
 .title-holder {
   display: flex;
   align-items: center;
+}
+.sidebar-item:hover{
+  background-color: lightgray;
 }
