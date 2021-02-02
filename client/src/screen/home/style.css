@@ -14,12 +14,10 @@
     grid-column-end: 4;
     /* debug */
     height: 200px;
-    background-color: red;
 }
 .sidebar-wrapper {
     grid-column-end: 2;
     /* debug */
-    background-color: orange;
     height: 800px;
 }
 .content-wrapper {
