@@ -3,7 +3,7 @@
   flex-direction: column;
   border-left: solid 2px lightgray
 }
-.sidebar-item {
+.sidebar-item, .sidebar-inner-item {
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
@@ -22,4 +22,7 @@
 }
 .sidebar-item:hover{
   background-color: lightgray;
-}
+  border-left: solid 3px green;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+} 
