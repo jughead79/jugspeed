@@ -1,10 +1,13 @@
 import './style.css'
 
+import Search from '../../components/home/search'
+import Sidebar from '../../components/home/sidebar'
+
 const Home = () => {
     return(
         <div className='home'>
-            <div className='search-wrapper'>search commponent</div>
-            <div className='sidebar-wrapper'>sidebar commponent</div>
+            <div className='search-wrapper'><Search/></div>
+            <div className='sidebar-wrapper'><Sidebar/></div>
             <div className='content-wrapper'>content commponent</div>
         </div>
     )
