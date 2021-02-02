@@ -1,10 +1,14 @@
 import React from 'react'
 
+import './style.css'
+
 const Search = () => {
     return(
-        <div>
+        <div className='search'>
             <h1 className="fas fa-user">Search</h1>
-            <i className="fas fa-user"></i>
+            <div>
+                <h1 className="fas fa-user">Search</h1>
+            </div>
         </div>
     )
 }

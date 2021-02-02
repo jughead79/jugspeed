@@ -8,12 +8,6 @@
     /* debug */
     background-color: blanchedalmond;
 }
-/* debug */
-.home * {
-    font-size: xx-large;
-    text-align: center;
-    padding-top: 50px;
-}
 
 .search-wrapper {
     grid-column-start: 1;
