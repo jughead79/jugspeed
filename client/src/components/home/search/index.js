@@ -5,10 +5,12 @@ import './style.css'
 const Search = () => {
     return(
         <div className='search'>
-            <p className="">Power your tools with data they need.</p>
             <div>
                 <i class="fas fa-search"></i>
-                <input className='search-input' placeholder='srefpo lorem'></input>
+            </div>
+            <div>
+                <p className="">Power your life with Knowledge.</p>
+                <input placeholder='Search from hundreads of Articles'></input>
             </div>
         </div>
     )

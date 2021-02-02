@@ -6,23 +6,20 @@
     column-gap: 10px; /* odd */
     row-gap: 10px; /* odd */
     /* debug */
-    background-color: blanchedalmond;
+    background-color: #eeeeee;
 }
 
 .search-wrapper {
     grid-column-start: 1;
-    grid-column-end: 4;
-    /* debug */
-    height: 200px;
+    grid-column-end: 5;
 }
 .sidebar-wrapper {
     grid-column-end: 2;
-    /* debug */
-    height: 800px;
 }
 .content-wrapper {
     grid-column-start: 2;
     grid-column-end: 5;
     /* debug */
+    height: 800px;
     background-color: yellow;
 }

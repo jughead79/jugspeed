@@ -1,16 +1,24 @@
 .search {
-    background-color: azure;
+    display: flex;
+    gap: 10px;
+    background-color: #EEEEEE;
     margin: 30px 30px 30px 0px;
 }
 .search p {
-    margin-left: 20px;
     font-size: 24px;
-    color: darkslateblue;
+    color: #1F3A93;
 }
-.search-input {
-    background-color: azure;
+
+.search i {
+    color: lightgray;
+    padding: 100% 4px 0px;
+    font-size: 34px;
+}
+.search input {
+    color: #1F3A93;
+    background-color: #EEEEEE;
     border: none;
-    border-bottom: solid 2px gray;
-    font-size: 52px;
+    border-bottom: solid 2px lightgray;
+    font-size: 46px;
     outline: none;
 }
