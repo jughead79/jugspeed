@@ -1,7 +1,23 @@
 .sidebar {
   display: flex;
   flex-direction: column;
+  border-left-color: lightgray;
+  border-left-width: 1px;
+  border-left: 1px solid;
 }
 .sidebar-item {
   display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+}
+.sidebar-item > * {
+  color: rgb(61, 85, 107);
+}
+.sidebar-item {
+  margin-right: 2px;
+}
+.title-holder {
+  display: flex;
+  align-items: center;
 }
