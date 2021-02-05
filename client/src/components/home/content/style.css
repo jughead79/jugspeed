@@ -4,5 +4,6 @@
     flex-wrap: wrap;
 }
 .card{
-    width: 300px;
+    position: unset;
+    width: 300px; /* no effect in browser */
 }
