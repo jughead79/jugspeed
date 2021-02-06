@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  database:
+    image: postgres
+    container_name: Database
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - database_vol:/var/lib/postgresql/data
+    ports: 
+      - 5432:5432
+    restart: always
+
+  pgadmin:
+      image: dpage/pgadmin4
+      container_name: pgadmin4
+      depends_on:
+        - database
+      ports:
+        - "8080:80"
+      environment:
+        PGADMIN_DEFAULT_EMAIL: cms@email.com
+        PGADMIN_DEFAULT_PASSWORD: cms
+      restart: always
+
+volumes: 
+  database_vol:
+    name: database_vol
