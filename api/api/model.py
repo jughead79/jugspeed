@@ -1,5 +1,9 @@
-from django.db.models import Model, CharField, TextField, DateTimeField
-from rest_framework.fields import ImageField
+from django.db.models import Model, CharField, TextField, DateTimeField, ForeignKey, CASCADE, JSONField, ImageField
+from django.contrib.auth.models import User
+from django.contrib.postgres.fields import ArrayField
+
+class Category(Model):
+    name = CharField(max_length=100)
 
 class Article(Model):
     title = CharField(max_length=100,null=False, blank=False)
@@ -7,4 +11,9 @@ class Article(Model):
     create = DateTimeField(auto_now_add=True)
     modify = DateTimeField(auto_now=True)
     author = CharField(max_length=100,blank=True,null=True)
-    cover = ImageField()
+    cover = ImageField(upload_to='posts')
+    author = ForeignKey(User, on_delete=CASCADE )
+    category = ForeignKey(Category, on_delete=CASCADE)
+    tags = ArrayField(CharField(max_length=200), blank=True)
+
+
