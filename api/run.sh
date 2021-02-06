@@ -1,7 +1,7 @@
 #!/bin/bash
 Wait () {
   clear
-  sec=5
+  sec=4
   while [ $sec -ne 0 ]; do
     echo "Wait for CMS to start in $sec second..."
     sleep 1
@@ -20,36 +20,23 @@ clear
 case $1 in
 
   0)
-    docker rm -f Database > /dev/null 2>&1
-    docker volume rm database > /dev/null 2>&1
+    docker-compose down
+    docker volume rm api_database_vol
     docker-compose build --force-rm --no-cache
     docker-compose up -d
     if [ $? -ne 0 ]; then
       echo "Could not init, Check log above."
       exit
     fi
-    echo "Running!"
+    Wait
+    echo "database system is ready to accept connections!"
     ;;
 
   1)
-    pip install -r requirements.txt
-    python manage.py makemigrations
+    rm -rf api/migrations
+    python manage.py makemigrations api
     python manage.py migrate
     python manage.py runserver
-    ;;
-
-  2)
-    rm -rf api/migrations
-    docker volume rm database_vol
-    docker rm -f Database > /dev/null 2>&1
-    docker volume rm database > /dev/null 2>&1
-    docker-compose build --force-rm --no-cache
-    docker-compose up -d
-    if [ $? -ne 0 ]; then
-      echo "Could not init, Check log above."
-      exit
-    fi
-    echo "Running!"
     ;;
 
 esac
