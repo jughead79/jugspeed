@@ -11,7 +11,7 @@ class Article(Model):
     create = DateTimeField(auto_now_add=True)
     modify = DateTimeField(auto_now=True)
     author = CharField(max_length=100,blank=True,null=True)
-    cover = ImageField(upload_to='posts')
+    cover = ImageField()
     author = ForeignKey(User, on_delete=CASCADE )
     category = ForeignKey(Category, on_delete=CASCADE)
     tags = ArrayField(CharField(max_length=200), blank=True)

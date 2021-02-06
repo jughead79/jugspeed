@@ -1,6 +1,6 @@
 .*
+media
 vnv
-api/posts
 !.gitignore
 __pycache__/
 migrations/
