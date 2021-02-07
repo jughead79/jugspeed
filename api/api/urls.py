@@ -4,10 +4,12 @@ from rest_framework.routers import DefaultRouter
 from django.conf import settings
 from django.conf.urls.static import static
 
-from .view import UserViewSet
+from .view import ArticleViewSet, CategoryViewSet
 
 router = DefaultRouter()
-router.register('article', UserViewSet)
+router.register('article', ArticleViewSet)
+router.register('category', CategoryViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
