@@ -14,12 +14,13 @@ const App = () => {
       <Router history={history}>
         <div> 
           <Header />          
-          <Switch>
+          <Switch> 
+            <div style={{marginTop:'80px'}}>
             <Route path='/' exact component={Home} />
             <Route path='/about' exact component={About} />
             <Route path='/article/:articleId' exact component={ArticlePage} />
             <Route path='/article/category/:categoryId' exact component={ArticleByCategory} />
-
+            </div>
           </Switch>
         </div>
       </Router>
