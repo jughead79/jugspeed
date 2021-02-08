@@ -1,8 +1,8 @@
 import "./style.css";
 
-import Search from "../../components/home/search";
-import Sidebar from "../../components/home/sidebar";
-import ContentSection from "../../components/home/content/ContentSection";
+import Search from "../../components/search";
+import Sidebar from "../../components/sidebar";
+import ContentSection from "../../components/content-section";
 const Home = () => {
   return (
     <div className="home">

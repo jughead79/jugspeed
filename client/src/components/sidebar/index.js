@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-import SidebarItem from "./SidebarItem";
+import SidebarItem from "./sidebar-item/SidebarItem";
 import "./style.css";
 
 const Sidebar = () => {
