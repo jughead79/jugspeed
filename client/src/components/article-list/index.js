@@ -1,17 +1,26 @@
 import React, { useEffect, useState } from "react";
-import ArticleCard from "../article-card";
 import axios from "axios";
+
+import ArticleCard from "../article-card";
 import "./style.css";
 
-const ContentSection = (props) => {
+const ArticleList = (props) => {
   const [data, setData] = useState([]);
+
   const fetchPost = async () => {
-    console.log(props.match)
-    const response = await axios.get(
-      "http://127.0.0.1:8000/article"
-      );
+    var url = "http://127.0.0.1:8000/article/";
+
+    if (Object.keys(props).length !== 0) {
+      if (Object.keys(props.match.params).length !== 0) {
+        var [key, value] = [Object.keys(props.match.params), Object.values(props.match.params)];
+        url += `?${key}=${value}`;
+      }
+    }
+
+    const response = await axios.get(url);
     setData(response.data);
   };
+
   useEffect(() => {
     fetchPost();
   }, []);
@@ -21,6 +30,8 @@ const ContentSection = (props) => {
       return <ArticleCard key={article.id} article={article} />;
     });
   };
+
   return <div className="content">{renderResult()}</div>;
 };
-export default ContentSection;
+
+export default ArticleList;

@@ -9,7 +9,9 @@ class ArticleViewSet(viewsets.ModelViewSet):
     serializer_class = ArticleSerializer
 
     def get_queryset(self):
-        return Article.objects.filter(**self.request.query_params.dict())
+        if self.request.query_params.dict():
+            return Article.objects.filter(**self.request.query_params.dict())
+        return Article.objects.all()
 
 
 class CategoryViewSet(viewsets.ModelViewSet):

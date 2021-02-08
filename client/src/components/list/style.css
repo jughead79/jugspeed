@@ -1,9 +1,0 @@
-.content{
-    display: flex ;
-    gap: 100px;
-    flex-wrap: wrap;
-}
-.card{
-    position: unset;
-    width: 300px; /* no effect in browser */
-}

@@ -20,13 +20,13 @@ const Sidebar = () => {
     <div>
       {data.map((category) => {
         return (
-          <Link to={`/article/category/${category.id}`} className="btn btn-primary">
-          <SidebarItem
-            key={category.id}
-            title={category.name}
-            icon="fab fa-500px"
-            count="90"
-          />
+          <Link key={category.id} to={`/article/category/${category.id}`} className="btn btn-primary">
+            <SidebarItem
+              key={category.id}
+              title={category.name}
+              icon="fab fa-500px"
+              count="90"
+            />
           </Link>
         );
       })}

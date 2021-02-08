@@ -2,7 +2,8 @@ import "./style.css";
 
 import Search from "../../components/search";
 import Sidebar from "../../components/sidebar";
-import ContentSection from "../../components/content-section";
+import ArticleList from '../../components/article-list';
+
 const Home = () => {
   return (
     <div className="home">
@@ -12,8 +13,8 @@ const Home = () => {
       <div className="sidebar-wrapper">
         <Sidebar />
       </div>
-      <div className="content-wrapper">
-        <ContentSection />
+      <div className='content-wrapper'>
+        <ArticleList />
       </div>
     </div>
   );

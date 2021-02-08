@@ -1,8 +1,11 @@
 import React from "react";
-import { Link} from 'react-router-dom'
-const ProductCard = ({ article }) => {
+import { Link} from 'react-router-dom';
+
+import './style.css';
+
+const ArticleCard = ({ article }) => {
   return (
-    <div className="card" style={{ width: "18rem" }}>
+    <div className="card" style={{position: 'unset', width: "18rem" }}>
       <img src={article.cover} className="card-img-top" alt="avatar" />
       <div className="card-body">
         <h5 className="card-title"> {article.title}</h5>
@@ -14,4 +17,5 @@ const ProductCard = ({ article }) => {
     </div>
   );
 };
-export default ProductCard;
+
+export default ArticleCard;
