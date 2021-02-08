@@ -7,7 +7,7 @@ from django.conf.urls.static import static
 from .view import ArticleViewSet, CategoryViewSet
 
 router = DefaultRouter()
-router.register('article', ArticleViewSet)
+router.register('article', ArticleViewSet, 'Article')
 router.register('category', CategoryViewSet)
 
 
