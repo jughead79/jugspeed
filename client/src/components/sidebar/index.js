@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
-import SidebarItem from "./sidebar-item/SidebarItem";
+import SidebarItem from "./sidebar-item";
 import "./style.css";
 
 const Sidebar = () => {
@@ -20,14 +19,13 @@ const Sidebar = () => {
     <div>
       {data.map((category) => {
         return (
-          <Link key={category.id} to={`/article/category/${category.id}`} className="btn btn-primary">
-            <SidebarItem
-              key={category.id}
-              title={category.name}
-              icon="fab fa-500px"
-              count="90"
-            />
-          </Link>
+          <SidebarItem
+            key={category.id}
+            title={category.name}
+            icon="fab fa-500px"
+            count="90"
+            id={category.id}
+          />
         );
       })}
     </div>

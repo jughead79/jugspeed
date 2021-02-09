@@ -1,14 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const SidebarItem = ({ title, icon, count }) => {
+const SidebarItem = ({ title, icon, count, id }) => {
   return (
-    <div className="sidebar-item">
+    <Link to={`/article/category/${id}`} className="sidebar-item">
       <div className="title-holder">
         <span className={`${icon} sidebar-inner-item`}></span>
         <span>{title}</span>
       </div>
       <span>{count}</span>
-    </div>
+    </Link>
   );
 };
+
 export default SidebarItem;

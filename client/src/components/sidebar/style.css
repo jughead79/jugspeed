@@ -12,6 +12,9 @@
 .sidebar-item > * {
   color: rgb(61, 85, 107);
 }
+.sidebar-item span {
+  text-decoration: none; /* not working! */
+}
 .sidebar-item {
   margin-right: 2px;
   border-radius: 9px;
