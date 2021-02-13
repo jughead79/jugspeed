@@ -1,3 +1,4 @@
+from django.db.models.query_utils import Q
 from rest_framework.status import *
 from rest_framework import viewsets
 
@@ -12,6 +13,7 @@ class ArticleViewSet(viewsets.ModelViewSet):
         if self.request.query_params.dict():
             return Article.objects.filter(**self.request.query_params.dict())
         return Article.objects.all()
+        #query = Q(category=1)|Q(category=3)|Q(category=4)
 
 
 class CategoryViewSet(viewsets.ModelViewSet):

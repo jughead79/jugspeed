@@ -7,6 +7,9 @@ import About from './screen/about/index'
 import Header from './components/header'
 import ArticleList from './components/article-list';
 
+import Panel from './screen/admin/panel'
+import CreateArticle from './screen/admin/create-article'
+
 const App = () => {
   return (
     <div>  
@@ -22,6 +25,9 @@ const App = () => {
               <Route path='/article/:id' exact component={ArticleList} />
               <Route path='/article/category/:category_id' exact component={ArticleList} />
               <Route path='/article/tag/:tag_id' exact component={ArticleList} />
+
+              <Route path='/admin/panel' exact component={Panel} />
+              <Route path='/admin/article/create' exact component={CreateArticle} />
             </div>
           </React.Fragment>
         </Switch>
