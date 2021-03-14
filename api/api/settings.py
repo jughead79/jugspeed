@@ -27,7 +27,7 @@ SECRET_KEY = 'u@6uzkg*fush$sc_na&!9n6#%2r6nr12)ww%^v1zla6dptt1##'
 DEBUG = True
 
 
-ALLOWED_HOSTS=['*']
+ALLOWED_HOSTS = ['*']
 
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
@@ -45,6 +45,10 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'blog.apps.BlogConfig',
+    'shop.apps.ShopConfig',
+    'account.apps.AccountConfig',
+    'payment.apps.PaymentConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -136,3 +140,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 MEDIA_URL = 'media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+AUTH_USER_MODEL = 'account.User'
