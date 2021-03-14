@@ -1,4 +1,4 @@
-from django.db.models import Model, CharField, TextField, DateTimeField, ForeignKey, CASCADE, JSONField, ImageField
+from django.db.models import Model, CharField, DateTimeField, ForeignKey, CASCADE, ImageField
 from django.contrib.auth.models import User
 from django.contrib.postgres.fields import ArrayField
 

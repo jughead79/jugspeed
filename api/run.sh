@@ -34,7 +34,7 @@ case $1 in
 
   1)
     rm -rf api/migrations
-    python manage.py makemigrations api
+    python manage.py makemigrations
     python manage.py migrate
     python manage.py runserver
     ;;
