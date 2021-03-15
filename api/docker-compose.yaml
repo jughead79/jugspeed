@@ -28,3 +28,4 @@ services:
 
 volumes: 
   database_vol:
+    name: api_database_vol
