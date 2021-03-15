@@ -16,6 +16,7 @@ class ArticleViewSet(viewsets.ModelViewSet):
         #query = Q(category=1)|Q(category=3)|Q(category=4)
 
 
+
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategoryDetailSerializer
