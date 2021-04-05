@@ -10,6 +10,11 @@ import GetStarted from './components/GetStarted'
 import Feedback from './components/Feedback'
 import Partner from './components/Partner'
 import Footer from './components/Footer'
+import Features from './components/Features'
+import Overview from './components/Overview'
+import Join from './components/Join'
+import CTA from './components/CTA'
+
 const App = () => {
   return (
     <div>
@@ -25,6 +30,11 @@ const App = () => {
       <Feedback />
       <Partner />
       <Footer />
+      <Features />
+      <Overview />
+      <Join />
+      <CTA />
+
     </div>
   );
 };
