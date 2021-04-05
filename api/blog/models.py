@@ -1,6 +1,7 @@
 from django.db.models import Model, CharField, DateTimeField, ForeignKey, CASCADE, ImageField, IntegerField
-from account.models import User
+#from account.models import User
 from django.contrib.postgres.fields import ArrayField
+from account.models import User
 
 
 class Category(Model):
