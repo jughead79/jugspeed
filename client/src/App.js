@@ -21,7 +21,10 @@ const App = () => {
       <Header />
       <SearchBox />
       <MainBanner />
-
+      <Features />
+      <Overview />
+      <Join />
+      <CTA />
       <SassTools />
       <FunFact />
       <WorkProcess />
@@ -30,11 +33,6 @@ const App = () => {
       <Feedback />
       <Partner />
       <Footer />
-      <Features />
-      <Overview />
-      <Join />
-      <CTA />
-
     </div>
   );
 };
