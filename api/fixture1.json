@@ -1,0 +1,52 @@
+[
+    { "model": "blog.category", "pk": 1, "fields": { "name": "Productivity" } },
+    {
+      "model": "blog.article",
+      "pk": 1,
+      "fields": {
+        "title": "A Mental Trick to Make Any Task Less Intimidating",
+        "content": "A few years ago, one of my children became obsessed with roller coasters. He watched video after video to study them from afar. He designed his own in computer games. There was just one problem: He was terrified of actually riding one.  Eventually, he identified the “Sooper Dooper Looper” at Hersheypark as a potential option: It wasn’t too tall or too fast, and had only one inversion. But when we actually went to the park, he started to lose his nerve. I knew he would regret it if he didn’t ride the roller coaster after all that, so I reminded him that in two minutes, the ride would be over. Even if he hated it, it was only two minutes (1:45, to be exact). I told him to picture himself on the other side of those two minutes.  So he did, and then he rode the coaster. And when it was over, he was really glad he’d tried it. I, meanwhile, was glad that a trick I use often had worked once again. This skill of picturing our future selves is fundamental for discipline — but it’s also important for happiness, which is just as important.  Be kind to your future self Humans are pretty bad at picturing our future selves. Research has found that when we think about them, the brain regions that are activated are similar to those activated when we think about strangers — but not as much to those activated when we think about our current selves.  This may be one reason that people under-save for retirement. Or why we stay up too late — because, as Jerry Seinfeld once observed, a lack of sleep is “Morning Guy’s problem.” But the same research found that when people could actually see (simulated) pictures of their aged selves, then they made better choices.  This suggests the wisdom of really picturing ourselves on the other side of any hard choice. For instance, you might remember that in the past, you’ve always felt exhilarated after an invigorating sunrise run. Presumably “Future You” will feel the same way. Picture yourself on the other side of the unpleasantly cold moment when",
+        "create": "2021-03-15T21:19:58.071Z",
+        "modify": "2021-03-15T21:19:58.071Z",
+        "cover": "1024-1920x1280.jpg",
+        "author": 2,
+        "category": 1,
+        "tags": "[\"life\", \"planning\"]"
+      }
+    },
+    {
+      "model": "account.address",
+      "pk": 1,
+      "fields": {
+        "address": "No.4 - street sun - space city",
+        "postcode": "24929084"
+      }
+    },
+    {
+      "model": "account.user",
+      "pk": 1,
+      "fields": {
+        "password": "pbkdf2_sha256$216000$XS1Tfwr6Gs9u$ZM6C01K5Xt0nmNPJBHk1tV/g1Ln36rmT5M2+QpcdfVY=",
+        "is_superuser": true,
+        "username": "1",
+        "is_staff": true,
+        "is_active": true
+      }
+    },
+    {
+      "model": "account.user",
+      "pk": 2,
+      "fields": {
+        "password": "erfan4321",
+        "is_superuser": true,
+        "username": "Speedster",
+        "is_staff": true,
+        "is_active": true,
+        "avatar": "speedster.jpg",
+        "address": 1,
+        "phone": "09876543210",
+        "balance": 400
+      }
+    }
+  ]
+  
