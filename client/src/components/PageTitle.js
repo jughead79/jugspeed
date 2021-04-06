@@ -1,12 +1,12 @@
 import react from 'react'
 
-const PageTitle = () => {
+const PageTitle = ({title}) => {
     return (
         <section class="page-title-banner">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h2>آخرین وبلاگ ما</h2>
+                        <h2>{title}</h2>
                     </div>
                 </div>
             </div>
