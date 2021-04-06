@@ -1,0 +1,17 @@
+[
+  { "model": "blog.category", "pk": 2, "fields": { "name": "هنر" } },
+  { "model": "blog.category", "pk": 3, "fields": { "name": "کتاب" } },
+  { "model": "blog.category", "pk": 4, "fields": { "name": "ساعت" } },
+  { "model": "blog.category", "pk": 5, "fields": { "name": "ساعت" } },
+  { "model": "blog.category", "pk": 6, "fields": { "name": "تلویزیون" } },
+  {
+    "model": "blog.category",
+    "pk": 7,
+    "fields": { "name": "تلویزیون هوشمند" }
+  },
+  {
+    "model": "blog.category",
+    "pk": 8,
+    "fields": { "name": "عرفان یک و نیم در چهار" }
+  }
+]

@@ -9,7 +9,7 @@
       "modify": "2021-04-06T11:03:52.913Z",
       "cover": "blog-img1.jpg",
       "author": 2,
-      "category": 1,
+      "category": 2,
       "tags": "[]"
     }
   },
@@ -23,7 +23,7 @@
       "modify": "2021-04-06T11:03:48.208Z",
       "cover": "blog-img2.jpg",
       "author": 2,
-      "category": 1,
+      "category": 3,
       "tags": "[]"
     }
   },
@@ -37,7 +37,7 @@
       "modify": "2021-04-06T11:04:18.238Z",
       "cover": "blog-img3.jpg",
       "author": 2,
-      "category": 1,
+      "category": 4,
       "tags": "[]"
     }
   },
@@ -51,7 +51,7 @@
       "modify": "2021-04-06T11:04:48.130Z",
       "cover": "blog-img4.jpg",
       "author": 2,
-      "category": 1,
+      "category": 2,
       "tags": "[]"
     }
   },
@@ -65,7 +65,7 @@
       "modify": "2021-04-06T11:05:17.381Z",
       "cover": "blog-img5.jpg",
       "author": 2,
-      "category": 1,
+      "category": 5,
       "tags": "[]"
     }
   }

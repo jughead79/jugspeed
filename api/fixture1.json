@@ -1,5 +1,4 @@
 [
-    { "model": "blog.category", "pk": 1, "fields": { "name": "Productivity" } },
     {
       "model": "account.address",
       "pk": 1,
