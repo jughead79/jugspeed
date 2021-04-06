@@ -36,6 +36,8 @@ case $1 in
     rm -rf api/migrations
     python manage.py makemigrations account blog shop payment
     python manage.py migrate
+    python manage.py loaddata fixture1.json
+    python manage.py loaddata article.json
     python manage.py runserver
     ;;
 
