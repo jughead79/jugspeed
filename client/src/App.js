@@ -10,15 +10,15 @@ import { Router, Route, Switch, BrowserRouter } from "react-router-dom";
 const App = () => {
   return (
     <div>
-      <BrowserRouter>
+      <Router history={history}>
         <Header />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/blog" exact component={Blog} />
-          <Route path="/show/" component={ArticleDetail} />
+          <Route path="/blog/show/:id" exact component={ArticleDetail} />
         </Switch>
         <Footer />
-      </BrowserRouter>
+      </Router>
     </div>
   );
 };
