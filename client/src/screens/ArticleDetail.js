@@ -8,19 +8,7 @@ import ArticleControls from "../components/blog/ArticleControls";
 import ArticleComments from "../components/blog/ArticleComments";
 import Reply from "../components/blog/Reply";
 const ArticleDetail = (props) => {
-  const [article, setArticle] = useState({});
 
-  const fetchArticle = async () => {
-    const articleId = props.match.params.id;
-    const response = await axios.get(
-      `http://127.0.0.1:8000/blog/article/${articleId}`
-    );
-    setArticle(response.data);
-  };
-
-  useEffect(() => {
-    fetchArticle();
-  }, []);
   return (
     <div>
       <PageTitle title="جزییات بلاگ" />
@@ -28,7 +16,7 @@ const ArticleDetail = (props) => {
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
-              <BlogDetail article={article} />
+            <BlogDetail id={props.match.params.id} />
               <ArticleControls />
               <ArticleComments />
               <Reply />
