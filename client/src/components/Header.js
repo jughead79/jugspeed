@@ -16,7 +16,7 @@ const Header = () => {
             </a>
 
             <div
-              classNameName="collapse navbar-collapse mean-menu"
+              className="collapse navbar-collapse mean-menu"
               id="navbarپشتیبانیedContent"
             >
               <ul className="navbar-nav nav ml-auto">

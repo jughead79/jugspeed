@@ -2,37 +2,37 @@ import react from 'react'
 
 const PageTitle = ({title}) => {
     return (
-        <section class="page-title-banner">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
+        <section className="page-title-banner">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-12">
                         <h2>{title}</h2>
                     </div>
                 </div>
             </div>
 
-            <div class="shape1"><img src="assets/img/shape1.png" alt="img"/></div>
-			<div class="shape2"><img src="assets/img/shape2.png" alt="img"/></div>
-			<div class="shape3"><img src="assets/img/shape3.png" alt="img"/></div>
-			<div class="shape6"><img src="assets/img/shape6.png" alt="img"/></div>
-			<div class="shape8 rotateme"><img src="assets/img/shape8.svg" alt="shape"/></div>
-            <div class="shape9"><img src="assets/img/shape9.svg" alt="shape"/></div>
+            <div className="shape1"><img src="assets/img/shape1.png" alt="img"/></div>
+			<div className="shape2"><img src="assets/img/shape2.png" alt="img"/></div>
+			<div className="shape3"><img src="assets/img/shape3.png" alt="img"/></div>
+			<div className="shape6"><img src="assets/img/shape6.png" alt="img"/></div>
+			<div className="shape8 rotateme"><img src="assets/img/shape8.svg" alt="shape"/></div>
+            <div className="shape9"><img src="assets/img/shape9.svg" alt="shape"/></div>
 
-            <div class="bubble-animate">
-                <div class="circle small square1"></div>
-                <div class="circle small square2"></div>
-                <div class="circle small square3"></div>
-                <div class="circle small square4"></div>
-                <div class="circle small square5"></div>
-                <div class="circle medium square1"></div>
-                <div class="circle medium square2"></div>
-                <div class="circle medium square3"></div>
-                <div class="circle medium square4"></div>
-                <div class="circle medium square5"></div>
-                <div class="circle large square1"></div>
-                <div class="circle large square2"></div>
-                <div class="circle large square3"></div>
-                <div class="circle large square4"></div>
+            <div className="bubble-animate">
+                <div className="circle small square1"></div>
+                <div className="circle small square2"></div>
+                <div className="circle small square3"></div>
+                <div className="circle small square4"></div>
+                <div className="circle small square5"></div>
+                <div className="circle medium square1"></div>
+                <div className="circle medium square2"></div>
+                <div className="circle medium square3"></div>
+                <div className="circle medium square4"></div>
+                <div className="circle medium square5"></div>
+                <div className="circle large square1"></div>
+                <div className="circle large square2"></div>
+                <div className="circle large square3"></div>
+                <div className="circle large square4"></div>
             </div>
         </section>
     )

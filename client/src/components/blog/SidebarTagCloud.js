@@ -2,11 +2,11 @@ import React from "react";
 
 const SidebarTagCloud = () => {
   return (
-    <div class="widget widget_tag_cloud">
-      <h3 class="widget-title">برچسب های محبوب</h3>
-      <div class="bar"></div>
+    <div className="widget widget_tag_cloud">
+      <h3 className="widget-title">برچسب های محبوب</h3>
+      <div className="bar"></div>
 
-      <div class="tagcloud">
+      <div className="tagcloud">
         <a href="#">هنر</a>
         <a href="#">کتاب</a>
         <a href="#">ساعت</a>

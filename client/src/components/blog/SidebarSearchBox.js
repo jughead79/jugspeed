@@ -2,11 +2,11 @@ import React from "react";
 
 const SidebarSearchBox = () => {
   return (
-    <div class="widget widget-search">
+    <div className="widget widget-search">
       <form>
-        <input type="text" class="form-control" placeholder="جستجو" />
+        <input type="text" className="form-control" placeholder="جستجو" />
         <button type="submit">
-          <i class="icofont-search-2"></i>
+          <i className="icofont-search-2"></i>
         </button>
       </form>
     </div>
