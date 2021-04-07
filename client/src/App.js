@@ -15,11 +15,7 @@ const App = () => {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/blog" exact component={Blog} />
-<<<<<<< HEAD
           <Route path="/blog/show/:id" exact component={ArticleDetail} />
-=======
-          <Route path="/show" component={ArticleDetail} />
->>>>>>> 3eea86e3a44458f33339ee0787be0220820432b8
         </Switch>
         <Footer />
       </Router>

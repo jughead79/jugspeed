@@ -1,6 +1,6 @@
 import React from "react";
-
-const BlogBox = ({article}) => {
+import { Link } from "react-router-dom";
+const BlogBox = ({ article }) => {
   return (
     <div className="col-lg-6 col-md-6">
       <div className="single-blog-post">
@@ -11,7 +11,8 @@ const BlogBox = ({article}) => {
         <div className="blog-post-content">
           <ul>
             <li>
-              <i className="icofont-user-male"></i> <a href="#">{article.author.username}</a>
+              <i className="icofont-user-male"></i>{" "}
+              <a href="#">{article.author.username}</a>
             </li>
             <li>
               <i className="icofont-wall-clock"></i> اسفند 1397
@@ -20,12 +21,10 @@ const BlogBox = ({article}) => {
           <h3>
             <a href="#">{article.title}</a>
           </h3>
-          <p>
-            {article.content}
-          </p>
-          <a href="#" className="read-more-btn">
+          <p>{article.content}</p>
+          <Link to={`/blog/show/${article.id}`} className="read-more-btn">
             ادامه مطلب <i className="icofont-rounded-double-right"></i>
-          </a>
+          </Link>
         </div>
       </div>
     </div>
