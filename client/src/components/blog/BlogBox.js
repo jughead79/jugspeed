@@ -2,19 +2,19 @@ import React from "react";
 
 const BlogBox = ({article}) => {
   return (
-    <div class="col-lg-6 col-md-6">
-      <div class="single-blog-post">
-        <a href="#" class="post-image">
+    <div className="col-lg-6 col-md-6">
+      <div className="single-blog-post">
+        <a href="#" className="post-image">
           <img src={article.cover} alt="blog-image" />
         </a>
 
-        <div class="blog-post-content">
+        <div className="blog-post-content">
           <ul>
             <li>
-              <i class="icofont-user-male"></i> <a href="#">{article.author.username}</a>
+              <i className="icofont-user-male"></i> <a href="#">{article.author.username}</a>
             </li>
             <li>
-              <i class="icofont-wall-clock"></i> اسفند 1397
+              <i className="icofont-wall-clock"></i> اسفند 1397
             </li>
           </ul>
           <h3>
@@ -23,8 +23,8 @@ const BlogBox = ({article}) => {
           <p>
             {article.content}
           </p>
-          <a href="#" class="read-more-btn">
-            ادامه مطلب <i class="icofont-rounded-double-right"></i>
+          <a href="#" className="read-more-btn">
+            ادامه مطلب <i className="icofont-rounded-double-right"></i>
           </a>
         </div>
       </div>

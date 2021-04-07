@@ -6,9 +6,9 @@ const Blog = () => {
   return (
     <div>
       <PageTitle title='آخرین مطالب وبلاگ'/>
-      <section class="blog-area blog-section ptb-100">
-        <div class="container">
-          <div class="row">
+      <section className="blog-area blog-section ptb-100">
+        <div className="container">
+          <div className="row">
             <ContentArea />
             <Sidebar />
           </div>

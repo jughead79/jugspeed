@@ -2,25 +2,25 @@ import React from "react";
 import Sidebar from "../components/blog/Sidebar";
 import PageTitle from "../components/PageTitle";
 const ArticleDetail = props => {
-    
+  console.log(props.match.params.id)
   return (
     <div>
       <PageTitle title="جزییات بلاگ" />
       {props.match.params.id}
-      <section class="blog-details-area ptb-100">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8">
-              <div class="blog-details">
-                <div class="article-img">
+      <section className="blog-details-area ptb-100">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8">
+              <div className="blog-details">
+                <div className="article-img">
                   <img src="assets/img/blog-details.jpg" alt="blog-details" />
-                  <div class="date">
+                  <div className="date">
                     20 <br /> اسفند
                   </div>
                 </div>
 
-                <div class="article-content">
-                  <ul class="category">
+                <div className="article-content">
+                  <ul className="category">
                     <li>
                       <a href="#">اطلاعات</a>
                     </li>
@@ -66,7 +66,7 @@ const ArticleDetail = props => {
                     صنعت چاپ و با استفاده از طراحان گرافیک است.
                   </p>
 
-                  <blockquote class="blockquote">
+                  <blockquote className="blockquote">
                     <p>
                       لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
                       و با استفاده از طراحان گرافیک است.لورم ایپسوم متن ساختگی
@@ -85,31 +85,31 @@ const ArticleDetail = props => {
                     طراحان گرافیک است.
                   </p>
 
-                  <div class="share-post">
+                  <div className="share-post">
                     <ul>
                       <li>
                         <a href="#">
-                          <i class="icofont-facebook"></i>
+                          <i className="icofont-facebook"></i>
                         </a>
                       </li>
                       <li>
                         <a href="#">
-                          <i class="icofont-twitter"></i>
+                          <i className="icofont-twitter"></i>
                         </a>
                       </li>
                       <li>
                         <a href="#">
-                          <i class="icofont-linkedin"></i>
+                          <i className="icofont-linkedin"></i>
                         </a>
                       </li>
                       <li>
                         <a href="#">
-                          <i class="icofont-instagram"></i>
+                          <i className="icofont-instagram"></i>
                         </a>
                       </li>
                       <li>
                         <a href="#">
-                          <i class="icofont-vimeo"></i>
+                          <i className="icofont-vimeo"></i>
                         </a>
                       </li>
                     </ul>
@@ -117,27 +117,27 @@ const ArticleDetail = props => {
                 </div>
               </div>
 
-              <div class="post-controls-buttons">
-                <div class="controls-left">
+              <div className="post-controls-buttons">
+                <div className="controls-left">
                   <a href="#">
-                    <i class="icofont-double-left"></i> پست قبلی
+                    <i className="icofont-double-left"></i> پست قبلی
                   </a>
                 </div>
 
-                <div class="controls-right">
+                <div className="controls-right">
                   <a href="#">
-                    پست بعدی <i class="icofont-double-right"></i>
+                    پست بعدی <i className="icofont-double-right"></i>
                   </a>
                 </div>
               </div>
 
-              <div class="post-comments">
+              <div className="post-comments">
                 <h3>نظرات</h3>
-                <div class="single-comment">
-                  <div class="comment-img">
+                <div className="single-comment">
+                  <div className="comment-img">
                     <img src="assets/img/client1.jpg" alt="client" />
                   </div>
-                  <div class="comment-content">
+                  <div className="comment-content">
                     <h4>جان اسمیت</h4>
                     <p>
                       لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
@@ -152,11 +152,11 @@ const ArticleDetail = props => {
                   </div>
                 </div>
 
-                <div class="single-comment left-m">
-                  <div class="comment-img">
+                <div className="single-comment left-m">
+                  <div className="comment-img">
                     <img src="assets/img/client2.jpg" alt="client" />
                   </div>
-                  <div class="comment-content">
+                  <div className="comment-content">
                     <h4>جان اسمیت</h4>
                     <p>
                       لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
@@ -171,11 +171,11 @@ const ArticleDetail = props => {
                   </div>
                 </div>
 
-                <div class="single-comment">
-                  <div class="comment-img">
+                <div className="single-comment">
+                  <div className="comment-img">
                     <img src="assets/img/client3.jpg" alt="client" />
                   </div>
-                  <div class="comment-content">
+                  <div className="comment-content">
                     <h4>جان اسمیت</h4>
                     <p>
                       لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
@@ -190,11 +190,11 @@ const ArticleDetail = props => {
                   </div>
                 </div>
 
-                <div class="single-comment">
-                  <div class="comment-img">
+                <div className="single-comment">
+                  <div className="comment-img">
                     <img src="assets/img/client4.jpg" alt="client" />
                   </div>
-                  <div class="comment-content">
+                  <div className="comment-content">
                     <h4>جان اسمیت</h4>
                     <p>
                       لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
@@ -210,43 +210,43 @@ const ArticleDetail = props => {
                 </div>
               </div>
 
-              <div class="leave-a-reply">
+              <div className="leave-a-reply">
                 <h3>پاسخ دهید</h3>
-                <div class="row">
-                  <div class="col-lg-6 col-md-6">
-                    <div class="form-group">
+                <div className="row">
+                  <div className="col-lg-6 col-md-6">
+                    <div className="form-group">
                       <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         placeholder="نام کامل"
                       />
                     </div>
                   </div>
 
-                  <div class="col-lg-6 col-md-6">
-                    <div class="form-group">
+                  <div className="col-lg-6 col-md-6">
+                    <div className="form-group">
                       <input
                         type="email"
-                        class="form-control"
+                        className="form-control"
                         placeholder="ایمیل"
                       />
                     </div>
                   </div>
 
-                  <div class="col-lg-12 col-md-12">
-                    <div class="form-group">
+                  <div className="col-lg-12 col-md-12">
+                    <div className="form-group">
                       <textarea
                         name="comment"
                         cols="30"
                         rows="5"
-                        class="form-control"
+                        className="form-control"
                         placeholder="نظر شما"
                       ></textarea>
                     </div>
                   </div>
 
-                  <div class="col-lg-12 col-md-12">
-                    <button type="submit" class="btn btn-primary">
+                  <div className="col-lg-12 col-md-12">
+                    <button type="submit" className="btn btn-primary">
                       ارسال
                     </button>
                   </div>

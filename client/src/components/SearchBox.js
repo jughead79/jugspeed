@@ -2,13 +2,13 @@ import React from "react";
 
 const SearchBox = () => {
   return (
-    <div id="header-search" class="header-search">
-      <button type="button" class="close">
+    <div id="header-search" className="header-search">
+      <button type="button" className="close">
         ×
       </button>
-      <form class="header-search-form">
+      <form className="header-search-form">
         <input type="search" value="" placeholder="همینجا تایپ کنید........" />
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           جستجو
         </button>
       </form>

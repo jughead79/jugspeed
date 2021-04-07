@@ -5,8 +5,8 @@ import SidebarRecentPost from "./SidebarRecentPost";
 import SidebarTagCloud from "./SidebarTagCloud";
 const Sidebar = () => {
   return (
-    <div class="col-lg-4 col-md-12">
-      <div class="sidebar-area">
+    <div className="col-lg-4 col-md-12">
+      <div className="sidebar-area">
         <SidebarSearchBox />
         <SidebarCategory />
         <SidebarRecentPost />

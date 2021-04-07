@@ -12,16 +12,16 @@ const SidebarCategory = () => {
     fetchPost();
   }, []);
   return (
-    <div class="widget widget_post_categories">
-      <h3 class="widget-title">دسته بندی پست ها</h3>
-      <div class="bar"></div>
+    <div className="widget widget_post_categories">
+      <h3 className="widget-title">دسته بندی پست ها</h3>
+      <div className="bar"></div>
 
       <ul>
         {Object.values(categories).map((category) => {
           return (
             <li key={category.id}>
               <a href="#">
-                <i class="icofont-bubble-right"></i>{category.name}
+                <i className="icofont-bubble-right"></i>{category.name}
               </a>
             </li>
           );

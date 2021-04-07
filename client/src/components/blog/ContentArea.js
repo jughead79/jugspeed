@@ -14,8 +14,8 @@ const ContentArea = () => {
     fetchPost()
   },[])
   return (
-    <div class="col-lg-8 col-md-12">
-      <div class="row">
+    <div className="col-lg-8 col-md-12">
+      <div className="row">
         {
           Object.values(articles).map(article=> {
             return(
