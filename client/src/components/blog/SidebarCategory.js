@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 const SidebarCategory = () => {
   const [categories, setcategories] = useState({});
 
@@ -20,9 +21,10 @@ const SidebarCategory = () => {
         {Object.values(categories).map((category) => {
           return (
             <li key={category.id}>
-              <a href="#">
-                <i className="icofont-bubble-right"></i>{category.name}
-              </a>
+              <Link to={`/blog/category/${category.id}`}>
+                <i className="icofont-bubble-right"></i>
+                {category.name}
+              </Link>
             </li>
           );
         })}

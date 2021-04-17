@@ -59,7 +59,7 @@ const BlogDetail = ({id}) => {
         <div className="article-content">
           <ul className="category">
             <li>
-            <a href="#">{article.category.name}</a>
+            <a href="#">{category.name}</a>
             </li>
           </ul>
 

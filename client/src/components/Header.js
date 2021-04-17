@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header id="header">
@@ -215,20 +215,9 @@ const Header = () => {
                 </li>
 
                 <li className="nav-item">
-                  <a href="#" className="nav-link">
-                    بلاگ
-                  </a>
-                  <ul className="dropdown_menu">
-                    <li>
-                      <a href="blog-1.html">بلاگ 1</a>
-                    </li>
-                    <li>
-                      <a href="blog-2.html">بلاگ 2</a>
-                    </li>
-                    <li>
-                      <a href="single-blog.html">جزئیات بلاگ</a>
-                    </li>
-                  </ul>
+                  <Link to='/blog' className="nav-link">
+                   بلاگ
+                  </Link>
                 </li>
 
                 <li className="nav-item">
