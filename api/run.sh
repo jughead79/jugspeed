@@ -1,11 +1,16 @@
 #!/bin/bash
+Welcome () {
+  echo "*%* Jugspeed CONTROL PANEL *%*"
+  echo " 0 - Initialize"
+  echo " 1 - Migrate & Run"
+  exit
+}
+
 Wait () {
-  clear
   sec=4
   while [ $sec -ne 0 ]; do
     echo "Wait for CMS to start in $sec second..."
     sleep 1
-    clear
     ((sec=sec-1))
   done
 }
@@ -20,8 +25,7 @@ clear
 case $1 in
 
   0)
-    docker-compose down
-    docker volume rm api_database_vol
+    docker-compose down -v -t 0
     docker-compose build --force-rm --no-cache
     docker-compose up -d
     if [ $? -ne 0 ]; then
@@ -41,5 +45,8 @@ case $1 in
     python manage.py loaddata article.json
     python manage.py runserver
     ;;
+
+  *)
+    Welcome
 
 esac

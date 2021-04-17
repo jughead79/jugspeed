@@ -1,24 +1,24 @@
 version: "3"
 
 services:
-  database:
+  jugspeed_database:
     image: postgres
-    container_name: Database
+    container_name: jugspeed_Database
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     volumes:
-      - database_vol:/var/lib/postgresql/data
+      - jugspeed_database_volume:/var/lib/postgresql/data
     ports: 
       - 5432:5432
     restart: always
 
-  pgadmin:
+  jugspeed_pgadmin:
       image: dpage/pgadmin4
-      container_name: pgadmin4
+      container_name: jugspeed_Admin
       depends_on:
-        - database
+        - jugspeed_database
       ports:
         - "8080:80"
       environment:
@@ -27,5 +27,5 @@ services:
       restart: always
 
 volumes: 
-  database_vol:
-    name: api_database_vol
+  jugspeed_database_volume:
+    name: jugspeed_database_volume
