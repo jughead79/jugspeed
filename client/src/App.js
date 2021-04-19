@@ -4,24 +4,26 @@ import Footer from "./components/Footer";
 import Home from "./screens/Home";
 import Blog from "./screens/Blog";
 import ArticleDetail from "./screens/ArticleDetail";
-import BlogByCategory from './screens/BlogByCategory'
 import history from "./history";
 import { Router, Route, Switch, BrowserRouter } from "react-router-dom";
+import { Provider as Articleprovider } from "./context/ArticleContext";
 
 const App = () => {
   return (
-    <div>
-      <Router history={history}>
-        <Header />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/blog" exact component={Blog} />
-          <Route path="/blog/show/:id" exact component={ArticleDetail} />
-          <Route path="/blog/category/:id" exact component={BlogByCategory} />
-        </Switch>
-        <Footer />
-      </Router>
-    </div>
+    <Articleprovider>
+      <div>
+        <Router history={history}>
+          <Header />
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/blog" exact component={Blog} />
+            <Route path="/blog/show/:id" exact component={ArticleDetail} />
+            <Route path="/blog/category/:id" exact component={Blog} />
+          </Switch>
+          <Footer />
+        </Router>
+      </div>
+    </Articleprovider>
   );
 };
 export default App;

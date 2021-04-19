@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import ContentPagination from "./ContentPagination";
 import BlogBox from "./BlogBox";
 import axios from "axios";
+import { Context as ArticleContext } from "../../context/ArticleContext";
+
 const ContentArea = ({ categoryId }) => {
   const [articles, setArticles] = useState({});
+  const { state, cleanUp } = useContext(ArticleContext);
 
   const fetchPost = async () => {
     const Url = categoryId
@@ -13,9 +16,11 @@ const ContentArea = ({ categoryId }) => {
     setArticles(response.data);
   };
 
+ 
   useEffect(() => {
-    fetchPost();
-  }, []);
+    console.log(state.articles)
+    state.articles ? setArticles(state.articles) : fetchPost();
+  }, [categoryId,state]);
   return (
     <div className="col-lg-8 col-md-12">
       <div className="row">
