@@ -1,3 +1,4 @@
+from django.db.models import query
 from django.db.models.query_utils import Q
 from rest_framework.status import *
 from rest_framework import viewsets
@@ -10,11 +11,19 @@ class ArticleViewSet(viewsets.ModelViewSet):
     serializer_class = ArticleSerializer
 
     def get_queryset(self):
-        if self.request.query_params.dict():
-            return Article.objects.filter(**self.request.query_params.dict())
-        return Article.objects.all()
-        #query = Q(category=1)|Q(category=3)|Q(category=4)
-
+        # set query to default
+        query = Article.objects.all()
+        # pop 'limit' key before filter to prevent break
+        params = self.request.query_params.dict()
+        limit = int(params.pop('limit', None))
+        if params:
+            # filter objects based on query params
+            query = Article.objects.filter(**params)
+        if limit:
+            # apply limit
+            return query[:limit]
+        # return without limit
+        return query
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
