@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import moment from "jalali-moment";
 const BlogBox = ({ article }) => {
   return (
     <div className="col-lg-6 col-md-6">
@@ -15,7 +16,11 @@ const BlogBox = ({ article }) => {
               <a href="#">{article.author.username}</a>
             </li>
             <li>
-              <i className="icofont-wall-clock"></i> اسفند 1397
+              <i style={{float:"right"}} className="icofont-wall-clock"></i>
+              <span>
+              {moment(article.created).locale("fa").format("DD ")}
+              {moment(article.created).locale("fa").format("MMMM ")}
+              </span>
             </li>
           </ul>
           <h3>

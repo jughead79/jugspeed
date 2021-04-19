@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import moment from "jalali-moment";
+
 const erfan = {
   "id": 2,
   "author": {
@@ -52,7 +54,7 @@ const BlogDetail = ({id}) => {
         <div className="article-img">
           <img src={article.cover} alt="blog-details" />
           <div className="date">
-            20 <br /> اسفند
+          {moment(article.created).locale("fa").format("DD")} <br /> {moment(article.created).locale("fa").format("MMMM")}
           </div>
         </div>
 

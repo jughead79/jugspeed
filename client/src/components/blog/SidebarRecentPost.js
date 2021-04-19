@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Jugspeed from "../../api/jugspeed";
-
+import { Link } from "react-router-dom";
+import moment from 'jalali-moment'
 const SidebarRecentPost = () => {
   const [recentArticle, setRecentArticle] = useState({});
   const fetchPost = async () => {
     const response = await Jugspeed.get("/blog/article?limit=4");
     setRecentArticle(response.data);
   };
-
   useEffect(() => {
     fetchPost();
   }, []);
@@ -20,16 +20,16 @@ const SidebarRecentPost = () => {
           return (
             <li>
               <div className="recent-post-thumb">
-                <a href="#">
+                <Link to={`/blog/show/${article.id}`}>
                   <img src={article.cover} alt="blog-image" />
-                </a>
+                </Link>
               </div>
 
               <div className="recent-post-content">
                 <h3>
-                  <a href="#">{article.title}</a>
+                  <Link to={`/blog/show/${article.id}`}>{article.title}</Link>
                 </h3>
-                <span className="date">اسفند 1397</span>
+                <span className="date">{moment(article.created).format('jYYYY/jMM/jDD')}</span>
               </div>
             </li>
           );
