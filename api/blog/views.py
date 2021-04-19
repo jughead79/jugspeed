@@ -15,13 +15,13 @@ class ArticleViewSet(viewsets.ModelViewSet):
         query = Article.objects.all()
         # pop 'limit' key before filter to prevent break
         params = self.request.query_params.dict()
-        limit = int(params.pop('limit', None))
+        limit = params.pop('limit', None)
         if params:
             # filter objects based on query params
             query = Article.objects.filter(**params)
         if limit:
             # apply limit
-            return query[:limit]
+            return query.order_by('-id')[0:int(limit)]
         # return without limit
         return query
 
