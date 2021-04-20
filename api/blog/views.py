@@ -1,9 +1,7 @@
-from django.db.models import query
-from django.db.models.query_utils import Q
 from rest_framework.status import *
 from rest_framework import viewsets
 
-from .models import Article, Category
+from .models import Article, Category, Comment
 from .serializers import *
 
 
@@ -27,5 +25,11 @@ class ArticleViewSet(viewsets.ModelViewSet):
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
-    queryset = Category.objects.all()
     serializer_class = CategoryDetailSerializer
+    queryset = Category.objects.all()
+
+
+class CommentViewSet(viewsets.ModelViewSet):
+    serializer_class = CommentSerializer
+    queryset = Comment.objects.all()
+    

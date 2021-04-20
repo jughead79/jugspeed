@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from account.models import User
-from .models import Article, Category
+from .models import Article, Category, Comment
 
 class UserDetailSerializer(serializers.ModelSerializer):
     class Meta:
@@ -20,3 +20,10 @@ class ArticleSerializer(serializers.ModelSerializer):
         model = Article
         fields = '__all__'
 
+
+class CommentSerializer(serializers.ModelSerializer):
+    user = UserDetailSerializer(read_only=True)
+    article = ArticleSerializer(read_only=True)
+    class Meta:
+        model = Comment
+        fields = '__all__'
