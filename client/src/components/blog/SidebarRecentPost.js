@@ -18,7 +18,7 @@ const SidebarRecentPost = () => {
       <ul>
         {Object.values(recentArticle).map((article) => {
           return (
-            <li>
+            <li key={article.id}>
               <div className="recent-post-thumb">
                 <Link to={`/blog/show/${article.id}`}>
                   <img src={article.cover} alt="blog-image" />

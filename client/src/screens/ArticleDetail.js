@@ -8,7 +8,6 @@ import ArticleControls from "../components/blog/ArticleControls";
 import ArticleComments from "../components/blog/ArticleComments";
 import Reply from "../components/blog/Reply";
 const ArticleDetail = (props) => {
-
   return (
     <div>
       <PageTitle title="جزییات بلاگ" />
@@ -16,9 +15,9 @@ const ArticleDetail = (props) => {
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
-            <BlogDetail id={props.match.params.id} />
-              <ArticleControls />
-              <ArticleComments />
+              <BlogDetail id={props.match.params.id} />
+              <ArticleControls id={props.match.params.id} />
+              <ArticleComments id={props.match.params.id} />
               <Reply />
             </div>
             <Sidebar />
