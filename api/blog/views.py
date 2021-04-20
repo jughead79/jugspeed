@@ -31,5 +31,19 @@ class CategoryViewSet(viewsets.ModelViewSet):
 
 class CommentViewSet(viewsets.ModelViewSet):
     serializer_class = CommentSerializer
-    queryset = Comment.objects.all()
+    
+    def get_queryset(self):
+        # set query to default
+        query = Comment.objects.all()
+        # pop 'limit' key before filter to prevent break
+        params = self.request.query_params.dict()
+        limit = params.pop('limit', None)
+        if params:
+            # filter objects based on query params
+            query = Comment.objects.filter(**params)
+        if limit:
+            # apply limit
+            return query.order_by('-id')[0:int(limit)]
+        # return without limit
+        return query
     
