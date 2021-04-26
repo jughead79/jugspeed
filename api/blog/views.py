@@ -1,3 +1,4 @@
+from django.db.models.query_utils import select_related_descend
 from rest_framework.status import *
 from rest_framework import viewsets
 
@@ -9,17 +10,22 @@ class ArticleViewSet(viewsets.ModelViewSet):
     serializer_class = ArticleSerializer
 
     def get_queryset(self):
+        
         # set query to default
         query = Article.objects.all()
         # pop 'limit' key before filter to prevent break
         params = self.request.query_params.dict()
-        limit = params.pop('limit', None)
+        self.limit = params.pop('limit', None)
+        self.offset = params.pop('offset', None)
+        order = params.pop('order', None)
         if params:
             # filter objects based on query params
             query = Article.objects.filter(**params)
-        if limit:
+        if order:
+            query.order_by(order)
+        #if limit:
             # apply limit
-            return query.order_by('-id')[0:int(limit)]
+            #return query.order_by('-id')[0:int(limit)]
         # return without limit
         return query
 
