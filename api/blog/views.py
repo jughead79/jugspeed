@@ -22,9 +22,8 @@ class ArticleViewSet(viewsets.ModelViewSet):
             # filter objects based on query params
             query = Article.objects.filter(**params)
         if order:
-            query.order_by(order)
-        #if limit:
-            # apply limit
+            # order objects based on query params
+            query = query.order_by(order)
             #return query.order_by('-id')[0:int(limit)]
         # return without limit
         return query
