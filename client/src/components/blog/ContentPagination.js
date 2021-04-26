@@ -1,40 +1,36 @@
 import React from "react";
+import ReactPaginate from "react-paginate";
 
-const ContentPagination = () => {
+const ContentPagination = ({
+  handlePageClick,
+  pageCount
+}) => {
+
   return (
     <div className="col-lg-12 col-md-12">
       <div className="pagination-area">
         <nav aria-label="Page navigation example">
           <ul className="pagination justify-content-center">
-            <li className="page-item">
-              <a className="page-link" href="#">
-                <i className="icofont-double-left"></i>
-              </a>
-            </li>
-
-            <li className="page-item active">
-              <a className="page-link" href="#">
-                1
-              </a>
-            </li>
-
-            <li className="page-item">
-              <a className="page-link" href="#">
-                2
-              </a>
-            </li>
-
-            <li className="page-item">
-              <a className="page-link" href="#">
-                3
-              </a>
-            </li>
-
-            <li className="page-item">
-              <a className="page-link" href="#">
-                <i className="icofont-double-right"></i>
-              </a>
-            </li>
+          <ReactPaginate
+        containerClassName={"page-item"}
+          pageClassName={"page-item"}
+          pageLinkClassName={"page-link"}
+          previousClassName={"page-item"}
+          nextClassName={"page-item"}
+          previousLinkClassName={"page-link"}
+          nextLinkClassName={"page-link"}
+          previousLabel={"قبلی"}
+          nextLabel={"بعدی"}
+          breakLabel={"..."}
+          breakClassName={"break-me"}
+          pageCount={pageCount}
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={5}
+          onPageChange={handlePageClick}
+          containerClassName={"pagination"}
+          subContainerClassName={"pages pagination"}
+          activeClassName={"active"}
+        />
           </ul>
         </nav>
       </div>

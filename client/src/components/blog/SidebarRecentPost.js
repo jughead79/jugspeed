@@ -5,8 +5,8 @@ import moment from 'jalali-moment'
 const SidebarRecentPost = () => {
   const [recentArticle, setRecentArticle] = useState({});
   const fetchPost = async () => {
-    const response = await Jugspeed.get("/blog/article?limit=4");
-    setRecentArticle(response.data);
+    const response = await Jugspeed.get("/blog/article/?limit=4");
+    setRecentArticle(response.data.results);
   };
   useEffect(() => {
     fetchPost();
