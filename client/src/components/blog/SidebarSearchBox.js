@@ -1,12 +1,14 @@
 import React, { useContext, useState } from "react";
 import { Context as ArticleContext } from "../../context/ArticleContext";
+import { useHistory } from 'react-router-dom'
+
 const SidebarSearchBox = () => {
   const [searchText, setSearchText] = useState("");
   const { fetchArticleBySearch } = useContext(ArticleContext);
-
+  let history = useHistory()
   const handleSearch = event => {
     event.preventDefault()
-    fetchArticleBySearch(searchText)
+    history.push(`/blog/?title__contains=${searchText}`)
     setSearchText('')
   }
   return (
