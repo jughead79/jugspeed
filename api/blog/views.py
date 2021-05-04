@@ -1,4 +1,4 @@
-from django.db.models.query_utils import select_related_descend
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.status import *
 from rest_framework import viewsets
 
@@ -8,6 +8,7 @@ from .serializers import *
 
 class ArticleViewSet(viewsets.ModelViewSet):
     serializer_class = ArticleSerializer
+    permission_classes = (IsAuthenticated,)
 
     def get_queryset(self):
         
@@ -36,7 +37,7 @@ class CategoryViewSet(viewsets.ModelViewSet):
 
 class CommentViewSet(viewsets.ModelViewSet):
     serializer_class = CommentSerializer
-    
+
     def get_queryset(self):
         # set query to default
         query = Comment.objects.all()

@@ -38,12 +38,12 @@ case $1 in
 
   1)
     rm -rf api/migrations
-    python manage.py makemigrations account blog shop payment
-    python manage.py migrate
-    python manage.py loaddata fixture1.json
-    python manage.py loaddata category.json
-    python manage.py loaddata article.json
-    python manage.py runserver
+    ./manage.py makemigrations account blog shop payment
+    ./manage.py migrate
+    ./manage.py loaddata fixture1.json
+    ./manage.py loaddata category.json
+    ./manage.py loaddata article.json
+    ./manage.py runserver
     ;;
 
   *)
