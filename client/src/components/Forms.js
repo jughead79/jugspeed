@@ -1,6 +1,6 @@
 import React from "react";
 
-const SassTools = () => {
+const Forms = () => {
   return (
     <section className="saas-tools ptb-100 bg-gray">
       <div className="container">
@@ -284,4 +284,4 @@ const SassTools = () => {
     </section>
   );
 };
-export default SassTools;
+export default Forms;

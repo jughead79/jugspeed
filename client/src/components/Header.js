@@ -219,7 +219,11 @@ const Header = () => {
                    بلاگ
                   </Link>
                 </li>
-
+                <li className="nav-item">
+                  <Link to='/login' className="nav-link">
+                   ورود
+                  </Link>
+                </li>
                 <li className="nav-item">
                   <a href="#" className="nav-link">
                     فروشگاه
