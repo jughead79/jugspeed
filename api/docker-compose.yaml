@@ -1,31 +1,53 @@
 version: "3"
 
 services:
+
   jugspeed_database:
     image: postgres
     container_name: jugspeed_Database
     environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - jugspeed_database_volume:/var/lib/postgresql/data
-    ports: 
-      - 5432:5432
+    networks:
+      - jugspeed_database_network
+      - master_pgadmin_network
     restart: always
 
-  jugspeed_pgadmin:
-      image: dpage/pgadmin4
-      container_name: jugspeed_Admin
-      depends_on:
-        - jugspeed_database
-      ports:
-        - "8080:80"
-      environment:
-        PGADMIN_DEFAULT_EMAIL: cms@email.com
-        PGADMIN_DEFAULT_PASSWORD: cms
-      restart: always
+  jugspeed_app:
+    container_name: jugspeed_App
+    build: .
+    volumes:
+      - .:/jugspeed-code:z
+      - master_socket_volume:/jugspeed-code/socket/
+      - master_static_volume:/jugspeed-code/static/
+      - master_bot_volume:/var/lib/telegram-bot-api
+    networks:
+      - jugspeed_database_network
+      - master_bot_network
+    depends_on:
+      - jugspeed_database
+    restart: always
 
 volumes: 
   jugspeed_database_volume:
     name: jugspeed_database_volume
+  master_socket_volume:
+    external:
+      name: master_socket_volume
+  master_static_volume:
+    external:
+      name: master_static_volume
+  master_bot_volume:
+    external: 
+      name: master_bot_volume
+
+networks:
+  jugspeed_database_network:
+    name: jugspeed_database_network
+  master_bot_network:
+    external: 
+      name: master_bot_network
+  master_pgadmin_network:
+    external: 
+      name: master_pgadmin_network

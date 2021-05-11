@@ -1,6 +1,9 @@
 .*
-vnv
 !.gitignore
+!.run.sh
+!.backup.sh
+backups/
 __pycache__/
 migrations/
 *.pyc
+vnv
