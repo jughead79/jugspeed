@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { userLogout } from "../actions/userActions";
 const Header = () => {
+  const dispatch = useDispatch();
+  const { userInfo } = useSelector((state) => state.userLogin);
   return (
     <header id="header">
       <div className="crake-mobile-nav">
@@ -215,13 +219,8 @@ const Header = () => {
                 </li>
 
                 <li className="nav-item">
-                  <Link to='/blog' className="nav-link">
-                   بلاگ
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to='/login' className="nav-link">
-                   ورود
+                  <Link to="/blog" className="nav-link">
+                    بلاگ
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -268,13 +267,27 @@ const Header = () => {
                     <i className="icofont-search-2"></i>
                   </a>
                 </li>
-                <li data-toggle="modal" data-target="#myModal2">
-                  <div className="side-menu">
-                    <span className="bar-1"></span>
-                    <span className="bar-2"></span>
-                    <span className="bar-3"></span>
-                  </div>
-                </li>
+
+                {userInfo ? (
+                  <li data-toggle="modal" data-target="#myModal2">
+                    <div className="side-menu">
+                      <span className="bar-1"></span>
+                      <span className="bar-2"></span>
+                      <span className="bar-3"></span>
+                    </div>
+                    <ul className="dropdown_menu">
+                      <li>
+                        <p onClick={() => dispatch(userLogout())}>خروج</p>
+                      </li>
+                    </ul>
+                  </li>
+                ) : (
+                  <li className="nav-item">
+                    <Link to="/login" className="nav-link">
+                      ورود
+                    </Link>
+                  </li>
+                )}
               </ul>
             </div>
           </nav>
