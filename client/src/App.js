@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Home from "./screens/Home";
 import Blog from "./screens/Blog";
 import Login from './screens/Login'
+import Register from './screens/Register'
 import ArticleDetail from "./screens/ArticleDetail";
 import history from "./history";
 import { Router, Route, Switch, BrowserRouter } from "react-router-dom";
@@ -19,6 +20,7 @@ const App = () => {
             <Route path="/" exact component={Home} />
             <Route path="/blog" exact component={Blog} />
             <Route path="/login/" exact component={Login} />
+            <Route path="/register/" exact component={Register} />
             <Route path="/blog/show/:id" exact component={ArticleDetail} />
             <Route path="/blog/category/:id" exact component={Blog} />
           </Switch>
