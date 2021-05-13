@@ -1,40 +1,60 @@
 import React, { useState, useEffect } from "react";
 import PageTitle from "../components/PageTitle";
 import { useDispatch, useSelector } from "react-redux";
-import { userLoginAction } from "../actions/userActions";
-import {Link} from 'react-router-dom'
-const Login = ({ location, history }) => {
+import { userRegisterAction } from "../actions/userActions";
+import { Link } from "react-router-dom";
+const Register = ({ location, history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [message, setMessage] = useState("");
 
   const dispatch = useDispatch();
   const { loading, userInfo, error } = useSelector((state) => state.userLogin);
   const redirect = location.search ? location.search.split("=")[1] : "/";
-
+console.log(userInfo)
   useEffect(() => {
     if (userInfo) history.push(redirect);
   }, [userInfo, redirect, history]);
   const submitHandler = (event) => {
     event.preventDefault();
-    dispatch(userLoginAction(email, password));
+    if ((password != confirmPassword)) {
+      setMessage("رمز عبور و تکرار آن یکی نمی باشد");
+    } else {
+      dispatch(userRegisterAction(name,email,password));
+    }
   };
   return (
     <div>
-      <PageTitle title="ورود" />
-      <section className="login-area ptb-100">
+      <PageTitle title="ثبت نام" />
+      <section className="signup-area ptb-100">
         <div className="container">
           <div className="row h-100 justify-content-center align-items-center">
             <div className="col-lg-6 col-md-12">
-              <div className="login-image">
+              <div className="signup-image">
                 <img src="assets/img/marketing.png" alt="image" />
               </div>
             </div>
             <div className="col-lg-6 col-md-12">
-              <div className="login-form">
-                <h3>خوش آمدید!</h3>
-                <p>لطفا وارد حساب کاربری خود شوید.</p>
+              {JSON.stringify(email)}
+            <p>{message ? message : null}</p>
+              <div className="signup-form">
+                <h3>حساب کاربری برای خود بسازید</h3>
                 <form onSubmit={submitHandler}>
                   <div className="row">
+                    <div className="col-lg-12">
+                      <div className="form-group">
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="نام و نام خانوادگی"
+                          value={name}
+                          onChange={(event) => setName(event.target.value)}
+                        />
+                      </div>
+                    </div>
+
                     <div className="col-lg-12">
                       <div className="form-group">
                         <input
@@ -59,7 +79,21 @@ const Login = ({ location, history }) => {
                       </div>
                     </div>
 
-                    <div className="col-lg-6">
+                    <div className="col-lg-12">
+                      <div className="form-group">
+                        <input
+                          type="password"
+                          className="form-control"
+                          placeholder="تکرار رمز عبور"
+                          value={confirmPassword}
+                          onChange={(event) =>
+                            setConfirmPassword(event.target.value)
+                          }
+                        />
+                      </div>
+                    </div>
+
+                    <div className="col-lg-12">
                       <div className="form-check">
                         <input
                           type="checkbox"
@@ -67,24 +101,19 @@ const Login = ({ location, history }) => {
                           id="checkme"
                         />
                         <label className="form-check-label" htmlFor="checkme">
-                          مرا به خاطر بسپار!
+                          مرا به خاطر بسپار
                         </label>
                       </div>
                     </div>
 
-                    <div className="col-lg-6 text-right">
-                      <p className="forgot-password">
-                        <a href="#">فراموشی رمز عبور؟</a>
-                      </p>
-                    </div>
-
                     <div className="col-lg-12">
                       <button type="submit" className="btn btn-primary">
-                        هم اکنون وارد شوید!
+                        ثبت نام کنید!
                       </button>
                       <br />
                       <span>
-                        کاربر جدید هستید؟ <Link to="/register">ثبت نام کن!</Link>
+                        در حال حاضر یک کاربر ثبت شده است؟{" "}
+                        <Link to="/login">ورود!</Link>
                       </span>
                     </div>
                   </div>
@@ -97,4 +126,4 @@ const Login = ({ location, history }) => {
     </div>
   );
 };
-export default Login;
+export default Register;
