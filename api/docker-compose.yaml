@@ -8,20 +8,20 @@ services:
     environment:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
-      - jugspeed_database_volume:/var/lib/postgresql/data
+      - jugspeed_database_volume:/var/lib/postgresql/data/
     networks:
       - jugspeed_database_network
       - master_pgadmin_network
     restart: always
 
-  jugspeed_app:
-    container_name: jugspeed_App
+  jugspeed_api:
+    container_name: jugspeed_Api
     build: .
     volumes:
-      - .:/jugspeed-code:z
-      - master_socket_volume:/jugspeed-code/socket/
-      - master_static_volume:/jugspeed-code/static/
-      - master_bot_volume:/var/lib/telegram-bot-api
+      - .:/jugspeed-api:z
+      - master_socket_volume:/jugspeed-api/socket/
+      - master_static_volume:/jugspeed-api/static/
+      - master_bot_volume:/var/lib/telegram-bot-api/
     networks:
       - jugspeed_database_network
       - master_bot_network

@@ -4,7 +4,7 @@ Welcome () {
   echo " 0 - initialize"
   echo "   Options: [ debug ] , [ --env <file path> ]"
   echo "   Usage: $ ./cms.sh debug --env /home/User/.env"
-  echo " 1 - rebuild app"
+  echo " 1 - rebuild api"
   echo " 2 - backup"
   echo " 3 - restore"
   exit
@@ -64,16 +64,16 @@ case $1 in
       exit
     fi
     Wait
-    printf "\nJugspeed is Running!"
+    printf "\nJugspeed Api is Running!"
     ;;
 
   1)
-    docker container restart -t 0 jugspeed_App
+    docker container restart -t 0 jugspeed_Api
     if [ $? -ne 0 ]; then
-      echo "Could not rebuild App, Check log above."
+      echo "Could not rebuild Api, Check log above."
       exit
     fi
-    echo "App successfully rebuilt."
+    echo "Api successfully rebuilt."
     ;;
 
   *)

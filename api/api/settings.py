@@ -11,14 +11,18 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("DEBUG_MODE")
 
 ALLOWED_HOSTS = [
+    '127.0.0.1',
     'localhost',
     'jugster.ir',
     'www.jugster.ir'
 ]
 
-CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000',
-]
+'''CORS_ORIGIN_WHITELIST = [
+    '127.0.0.1:8000',
+    'jugster.ir:8000',
+    'www.jugster.ir'
+]'''
+CORS_ALLOW_ALL_ORIGINS = True
 
 INSTALLED_APPS = [
     'django.contrib.admin',
