@@ -60,13 +60,14 @@ case $1 in
     fi
     docker-compose up -d
     if [ $? -ne 0 ]; then
-      echo "Could not init Jugspeed, Check log above."
+      echo "Could not init Jugspeed Api, Check log above."
       exit
     fi
-    npm --prefix ../client/ run build
-    docker cp ../client/build/. Nginx:/var/www/html/jugspeed/
     Wait
     printf "\nJugspeed Api is Running!"
+    npm --prefix ../client/ install
+    npm --prefix ../client/ run build
+    docker cp ../client/build/. Nginx:/var/www/html/jugspeed/
     ;;
 
   1)

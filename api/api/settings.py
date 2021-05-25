@@ -22,8 +22,8 @@ CORS_ORIGIN_WHITELIST = [
     "http://127.0.0.1",
     "http://localhost",
     "http://jugspeed_Api",
-    "http://jugster.ir",
-    "http://www.jugster.ir",
+    "https://jugster.ir",
+    "https://www.jugster.ir",
 ]
 
 INSTALLED_APPS = [

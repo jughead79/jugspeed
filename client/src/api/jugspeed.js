@@ -1,6 +1,6 @@
 import axios from "axios";
 const instance = axios.create({
-  baseURL: "http://api.jugster.ir",
+  baseURL: "https://api.jugster.ir",
 });
 instance.interceptors.request.use(
   async (config) => {
