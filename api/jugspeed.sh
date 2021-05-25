@@ -1,7 +1,7 @@
 #!/bin/bash
 Welcome () {
   echo "*%* Jugspeed CONTROL PANEL *%*"
-  echo " 0 - initialize"
+  echo " 0 - initialize Api & build App"
   echo "   Options: [ debug ] , [ --env <file path> ]"
   echo "   Usage: $ ./cms.sh debug --env /home/User/.env"
   echo " 1 - rebuild api"
@@ -63,6 +63,8 @@ case $1 in
       echo "Could not init Jugspeed, Check log above."
       exit
     fi
+    npm --prefix ../client/ run build
+    docker cp ../client/build/. Nginx:/var/www/html/jugspeed/
     Wait
     printf "\nJugspeed Api is Running!"
     ;;
