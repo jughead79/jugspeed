@@ -11,25 +11,14 @@ const Blog = (props) => {
   const { state, cleanUp } = useContext(ArticleContext);
   const [offset, setOffset] = useState(0);
   const [postCount, setPostCount] = useState(0);
-  /////
-  // const getData = async () => {
-  //   const Url = cat
-  //     ? `http://127.0.0.1:8000/blog/article/?category=${cat}&limit=5`
-  //     : `http://127.0.0.1:8000/blog/article/?limit=5&offset=${offset}&order=id`;
-  //   const response = await axios.get(Url);
-  //   const data = response.data;
-  //   setArticles(data.results);
-  //   setPostCount(data.count / 5);
-  // };
 
-  ///////
-console.log(props.history.location.search)
+  console.log(props.history.location.search)
   const dispatch = useDispatch();
   const articleList = useSelector((state) => state.articlelist);
   const { error, articles, loading, count } = articleList;
   useEffect(() => {
-    dispatch(articlesList(props.match.params.id, offset,props.history.location.search));
-  }, [dispatch,offset,props.match.params.id,props.history.location.search]);
+    dispatch(articlesList(props.match.params.id, offset, props.history.location.search));
+  }, [dispatch, offset, props.match.params.id, props.history.location.search]);
   return (
     <div>
       <PageTitle title="آخرین مطالب وبلاگ" />
@@ -43,7 +32,7 @@ console.log(props.history.location.search)
             ) : (
               <ContentArea
                 articles={articles}
-                pageCount={count /5}
+                pageCount={count / 5}
                 handleOffset={setOffset}
               />
             )}

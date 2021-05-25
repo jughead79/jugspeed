@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import Jugspeed from "../../api/jugspeed";
 import { Link } from "react-router-dom";
 const SidebarCategory = () => {
   const [categories, setcategories] = useState({});
 
   const fetchPost = async () => {
-    const response = await axios.get("http://127.0.0.1:8000/blog/category/");
+    const response = await Jugspeed.get("/blog/category/");
     setcategories(response.data);
   };
 
