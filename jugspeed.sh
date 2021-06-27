@@ -11,7 +11,7 @@ Welcome () {
 
 CheckEnv () {
   # check env file existance
-  if [ -f .env ]
+  if [ -f "api/.env" ]
   then
     # set default
     DEBUG_MODE=False
@@ -25,10 +25,10 @@ CheckEnv () {
       DEBUG_MODE=True
     fi
     # update .env file
-    sed -i "s/DEBUG_MODE=False/DEBUG_MODE=$DEBUG_MODE/" .env
-    sed -i "s/DEBUG_MODE=True/DEBUG_MODE=$DEBUG_MODE/" .env
+    sed -i "s/DEBUG_MODE=False/DEBUG_MODE=$DEBUG_MODE/" "api/.env"
+    sed -i "s/DEBUG_MODE=True/DEBUG_MODE=$DEBUG_MODE/" "api/.env"
     # export all variables
-    export $(grep -v '^#' .env | xargs -0)
+    export $(grep -v '^#' "api/.env" | xargs -0)
     echo "environment file is OK."
   else
     echo "environment file DOES NOT FOUND."
@@ -64,10 +64,18 @@ case $1 in
     fi
 
     if [ $DEV_MODE == True ]
-    then      
+    then
+      docker cp ssl/api.jugster.ir.crt Nginx:/etc/nginx/conf.d/selfsigned.crt
+      docker cp ssl/api.jugster.ir.key  Nginx:/etc/nginx/conf.d/selfsigned.key
+      docker cp ssl/dev.jugster.conf  Nginx:/etc/nginx/conf.d/dev.jugster.conf
       printf "\nJugspeed Api is Running!"
     else
-      npm --prefix client/ install
+      if [ $DEBUG_MODE == True ]
+      then
+        npm --prefix client/ install
+      else
+        npm --prefix client/ ci --only=production
+      fi
       npm --prefix client/ run build
       docker cp client/build/. Nginx:/var/www/html/jugspeed/
     fi
