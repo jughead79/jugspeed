@@ -18,13 +18,18 @@ ALLOWED_HOSTS = [
     "www.api.jugster.ir",
 ]
 
-CORS_ORIGIN_WHITELIST = [
+'''if DEBUG == "True":
+    CORS_ORIGIN_ALLOW_ALL = True
+else:
+    CORS_ORIGIN_WHITELIST = [
     "http://127.0.0.1",
     "http://localhost",
     "http://jugspeed_Api",
     "https://jugster.ir",
     "https://www.jugster.ir",
-]
+]'''
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
 
 INSTALLED_APPS = [
     "django.contrib.admin",
