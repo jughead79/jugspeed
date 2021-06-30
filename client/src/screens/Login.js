@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import PageTitle from "../components/PageTitle";
 import { useDispatch, useSelector } from "react-redux";
 import { userLoginAction } from "../actions/userActions";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 const Login = ({ location, history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,7 +16,7 @@ const Login = ({ location, history }) => {
   }, [userInfo, redirect, history]);
   const submitHandler = (event) => {
     event.preventDefault();
-    dispatch(userLoginAction(email, password));
+    email && password && dispatch(userLoginAction(email, password));
   };
   return (
     <div>
@@ -30,6 +30,11 @@ const Login = ({ location, history }) => {
               </div>
             </div>
             <div className="col-lg-6 col-md-12">
+              {error ? (
+                <div class="alert alert-danger" role="alert">
+                  {error}
+                </div>
+              ) : null}
               <div className="login-form">
                 <h3>خوش آمدید!</h3>
                 <p>لطفا وارد حساب کاربری خود شوید.</p>
@@ -84,7 +89,8 @@ const Login = ({ location, history }) => {
                       </button>
                       <br />
                       <span>
-                        کاربر جدید هستید؟ <Link to="/register">ثبت نام کن!</Link>
+                        کاربر جدید هستید؟{" "}
+                        <Link to="/register">ثبت نام کن!</Link>
                       </span>
                     </div>
                   </div>

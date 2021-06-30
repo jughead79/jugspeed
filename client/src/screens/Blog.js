@@ -12,12 +12,14 @@ const Blog = (props) => {
   const [offset, setOffset] = useState(0);
   const [postCount, setPostCount] = useState(0);
 
-  console.log(props.history.location.search)
+  console.log(props.history.location.search);
   const dispatch = useDispatch();
   const articleList = useSelector((state) => state.articlelist);
   const { error, articles, loading, count } = articleList;
   useEffect(() => {
-    dispatch(articlesList(props.match.params.id, offset, props.history.location.search));
+    dispatch(
+      articlesList(props.match.params.id, offset, props.history.location.search)
+    );
   }, [dispatch, offset, props.match.params.id, props.history.location.search]);
   return (
     <div>

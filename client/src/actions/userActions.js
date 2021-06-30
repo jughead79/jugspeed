@@ -1,5 +1,5 @@
 import Jugspeed from "../api/jugspeed";
-
+import alertAction from './alertAction'
 export const userLoginAction = (email, password) => async (dispatch) => {
   try {
     dispatch({ type: "USER_LOGIN_REQUEST" });
@@ -13,9 +13,9 @@ export const userLoginAction = (email, password) => async (dispatch) => {
     dispatch({
       type: "USER_LOGIN_FAIL",
       payload:
-        error.response && error.response.data.message
-          ? error.response.data.message
-          : error.message,
+        error.response && error.response.data.detail
+          ? error.response.data.detail
+          : error.detail,
     });
   }
 };
