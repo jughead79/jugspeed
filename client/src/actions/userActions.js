@@ -1,10 +1,10 @@
 import Jugspeed from "../api/jugspeed";
 
-export const userLoginAction = (email, password) => async (dispatch) => {
+export const userLoginAction = (username, password) => async (dispatch) => {
   try {
     dispatch({ type: "USER_LOGIN_REQUEST" });
     const { data } = await Jugspeed.post("/account/login/", {
-      username: email,
+      username: username,
       password: password,
     });
     dispatch({ type: "USER_LOGIN_SUCCESS", payload: data });
@@ -26,11 +26,11 @@ export const userLogout = () => (dispatch) => {
 };
 
 export const userRegisterAction =
-  (name, email, password) => async (dispatch) => {
+  (name, username, password) => async (dispatch) => {
     try {
       dispatch({ type: "USER_REGISTER_REQUEST" });
       const { data } = await Jugspeed.post("/account/register/", {
-        "email":email,
+        "username":username,
         "password":password,
         "name":name,
       });

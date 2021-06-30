@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { userRegisterAction } from "../actions/userActions";
 import { Link } from "react-router-dom";
 const Register = ({ location, history }) => {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -22,7 +22,7 @@ console.log(userInfo)
     if ((password != confirmPassword)) {
       setMessage("رمز عبور و تکرار آن یکی نمی باشد");
     } else {
-      dispatch(userRegisterAction(name,email,password));
+      dispatch(userRegisterAction(name,username,password));
     }
   };
   return (
@@ -37,7 +37,6 @@ console.log(userInfo)
               </div>
             </div>
             <div className="col-lg-6 col-md-12">
-              {JSON.stringify(email)}
             <p>{message ? message : null}</p>
               <div className="signup-form">
                 <h3>حساب کاربری برای خود بسازید</h3>
@@ -58,11 +57,11 @@ console.log(userInfo)
                     <div className="col-lg-12">
                       <div className="form-group">
                         <input
-                          type="email"
+                          type="username"
                           className="form-control"
                           placeholder="ایمیل"
-                          value={email}
-                          onChange={(event) => setEmail(event.target.value)}
+                          value={username}
+                          onChange={(event) => setUsername(event.target.value)}
                         />
                       </div>
                     </div>
