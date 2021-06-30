@@ -6,5 +6,5 @@ app_name = 'account'
 
 urlpatterns = [
     path('login/', views.MyTokenObtainPairView.as_view(),name='token_obtain_pair'),
-    path('register/', views.registerUser, name='register'),
+    path('register/', views.Register.as_view(), name='register'),
 ]

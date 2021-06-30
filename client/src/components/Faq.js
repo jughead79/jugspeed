@@ -2,15 +2,15 @@ import React from "react";
 
 const Faq = () => {
   return (
-    <section class="faq-area ptb-100">
-      <div class="container">
-        <div class="faq-accordion">
-          <ul class="accordion">
-            <li class="accordion-item">
-              <a class="accordion-title active" href="javascript:void(0)">
+    <section className="faq-area ptb-100">
+      <div className="container">
+        <div className="faq-accordion">
+          <ul className="accordion">
+            <li className="accordion-item">
+              <a className="accordion-title active" href="javascript:void(0)">
                 چگونه مجوزها در اینسنت از طریق گوگل پلی کار می کنند؟
               </a>
-              <p class="accordion-content show">
+              <p className="accordion-content show">
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
                 استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
                 در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
@@ -18,11 +18,11 @@ const Faq = () => {
               </p>
             </li>
 
-            <li class="accordion-item">
-              <a class="accordion-title" href="javascript:void(0)">
+            <li className="accordion-item">
+              <a className="accordion-title" href="javascript:void(0)">
                 قفل هوشمند برای برنامه های فوری مورد نیاز است؟
               </a>
-              <p class="accordion-content">
+              <p className="accordion-content">
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
                 استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
                 در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
@@ -30,11 +30,11 @@ const Faq = () => {
               </p>
             </li>
 
-            <li class="accordion-item">
-              <a class="accordion-title" href="javascript:void(0)">
+            <li className="accordion-item">
+              <a className="accordion-title" href="javascript:void(0)">
                 آیا می توانم فعالیت های متعددی در یک ویژگی واحد داشته باشم؟
               </a>
-              <p class="accordion-content">
+              <p className="accordion-content">
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
                 استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
                 در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
@@ -42,11 +42,11 @@ const Faq = () => {
               </p>
             </li>
 
-            <li class="accordion-item">
-              <a class="accordion-title" href="javascript:void(0)">
+            <li className="accordion-item">
+              <a className="accordion-title" href="javascript:void(0)">
                 آیا می توانم منابع بین ویژگی ها را به اشتراک بگذارم؟؟
               </a>
-              <p class="accordion-content">
+              <p className="accordion-content">
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
                 استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
                 در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
@@ -54,11 +54,11 @@ const Faq = () => {
               </p>
             </li>
 
-            <li class="accordion-item">
-              <a class="accordion-title" href="javascript:void(0)">
+            <li className="accordion-item">
+              <a className="accordion-title" href="javascript:void(0)">
                 آیا مولتی تکس برای برنامه های فوری پشتیبانی می شود؟
               </a>
-              <p class="accordion-content">
+              <p className="accordion-content">
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
                 استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
                 در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
@@ -66,11 +66,11 @@ const Faq = () => {
               </p>
             </li>
 
-            <li class="accordion-item">
-              <a class="accordion-title" href="javascript:void(0)">
+            <li className="accordion-item">
+              <a className="accordion-title" href="javascript:void(0)">
                 آیا می توانم منابع بین ویژگی ها را به اشتراک بگذارم؟
               </a>
-              <p class="accordion-content">
+              <p className="accordion-content">
                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
                 استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
                 در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد
