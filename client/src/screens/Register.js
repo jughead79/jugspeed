@@ -37,6 +37,11 @@ console.log(userInfo)
               </div>
             </div>
             <div className="col-lg-6 col-md-12">
+            {error ? (
+                <div class="alert alert-danger" role="alert">
+                  {error}
+                </div>
+              ) : null}
             <p>{message ? message : null}</p>
               <div className="signup-form">
                 <h3>حساب کاربری برای خود بسازید</h3>

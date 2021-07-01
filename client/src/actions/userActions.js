@@ -17,6 +17,7 @@ export const userLoginAction = (username, password) => async (dispatch) => {
           ? error.response.data.detail
           : error.detail,
     });
+    console.log(error.response)
   }
 };
 
@@ -47,9 +48,10 @@ export const userRegisterAction =
       dispatch({
         type: "USER_REGISTER_FAIL",
         payload:
-          error.response && error.response.data.message
-            ? error.response.data.message
-            : error.message,
+          error.response && error.response.data.detail
+            ? error.response.data.detail
+            : error.detail,
       });
+      console.log(error.response)
     }
   };
